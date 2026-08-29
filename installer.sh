@@ -6,7 +6,7 @@ echo "=========================================================="
 
 rm -f /tmp/Alkuds_ipaudio.ipk
 
-wget -O /tmp/Alkuds_ipaudio.ipk "https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main/Alkuds_ipaudio-R31P7-update-ip.ipk"
+wget -O /tmp/Alkuds_ipaudio.ipk "https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main/Alkuds_ipaudio-R32.ipk"
 
 echo "=========================================================="
 echo "               Installing Plugin...                       "
