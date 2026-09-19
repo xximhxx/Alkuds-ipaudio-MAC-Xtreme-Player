@@ -6,7 +6,7 @@ echo "=========================================================="
 
 rm -f /tmp/Alkuds_ipaudio.ipk
 
-wget -O /tmp/Alkuds_ipaudio.ipk "https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main/Alkuds_ipaudio-R46.ipk"
+wget -O /tmp/Alkuds_ipaudio.ipk "https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main/Alkuds_ipaudio-19092026.ipk"
 
 echo "=========================================================="
 echo "               Installing Plugin...                       "
@@ -22,5 +22,4 @@ echo "           Installation Completed Successfully!"
 echo "               Restarting Enigma2 GUI...                  "
 echo "=========================================================="
 
-killall -9 enigma2
 exit 0
