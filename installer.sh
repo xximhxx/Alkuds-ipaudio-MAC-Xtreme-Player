@@ -19,7 +19,7 @@ rm -f /tmp/Alkuds_ipaudio.ipk
 echo "=========================================================="
 echo "           Installation Completed Successfully!"
                          IBRAHEM HAMDAN
-echo "               Restarting Enigma2 GUI...                  "
+echo "                               "
 echo "=========================================================="
 
 exit 0
