@@ -19,7 +19,6 @@ rm -f /tmp/Alkuds_ipaudio.ipk
 echo "=========================================================="
 echo "           Installation Completed Successfully!"
                          IBRAHEM HAMDAN
-echo "                               "
 echo "=========================================================="
 
 exit 0
