@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PACKAGE_URL="https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main/Alkuds_ipaudio-20260928-r98.ipk"
+PACKAGE_URL="https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main/Alkuds_ipaudio-20260929-r100.ipk"
 PACKAGE_FILE="/tmp/Alkuds_ipaudio.ipk"
 OLD_PACKAGE="enigma2-plugin-extensions-xklass"
 OLD_PLUGIN_DIR="/usr/lib/enigma2/python/Plugins/Extensions/XKlass"
