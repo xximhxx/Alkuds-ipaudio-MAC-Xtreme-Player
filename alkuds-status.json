@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "latest_version": "1.97-20261001-r112-update-notifications",
+  "update_title": "تحديث جديد متوفر",
+  "update_message": "يتوفر إصدار جديد من بلجن القدس. اضغط الزر الأزرق للتحديث.",
+  "notice": {
+    "enabled": false,
+    "id": "20261001-001",
+    "title": "إشعار القدس",
+    "message": "اكتب نص الإشعار هنا"
+  }
+}
