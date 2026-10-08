@@ -7,10 +7,11 @@
 # Commands that could read stdin get </dev/null, because stdin is this script.
 
 main() {
-    FILE="Alkuds_ipaudio-r145.ipk"
+    FILE="Alkuds_ipaudio-r148.ipk"
     URL="https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main/$FILE"
     TMP="/tmp/$FILE"
     MIN_BYTES=500000
+    EXPECTED_SHA256="b11ad9a0d07ab56808af619ab01c299d0d280f08990756f136e04dc9fb3a80a2"
 
     echo "================================"
     echo " Alkuds updater - $FILE"
@@ -38,6 +39,18 @@ main() {
     MAGIC="$(dd if="$TMP" bs=1 count=7 2>/dev/null </dev/null)"
     if [ "${SIZE:-0}" -lt "$MIN_BYTES" ] || [ "$MAGIC" != '!<arch>' ]; then
         echo "ERROR: downloaded file is not a valid package (size=${SIZE:-0})."
+        rm -f "$TMP"
+        return 1
+    fi
+    if command -v sha256sum >/dev/null 2>&1; then
+        ACTUAL_SHA256="$(sha256sum "$TMP" | cut -d ' ' -f 1)"
+        if [ "$ACTUAL_SHA256" != "$EXPECTED_SHA256" ]; then
+            echo "ERROR: package checksum mismatch. Upload all matching release files."
+            rm -f "$TMP"
+            return 1
+        fi
+    else
+        echo "ERROR: sha256sum is required to verify this update."
         rm -f "$TMP"
         return 1
     fi

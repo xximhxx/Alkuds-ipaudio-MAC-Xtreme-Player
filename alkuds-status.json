@@ -1,7 +1,7 @@
 {
-  "latest_version": "1.97-20261008-r145-laroza",
-  "update_title": "تحديث جديد متوفر",
-  "update_message": "R145: إصلاح تشغيل لاروزا (خطأ Unexpected Laroza catalogue address عند الضغط على تشغيل).",
+  "latest_version": "1.97-20261008-r148-laroza-update",
+  "update_title": "تحديث القدس R148 متوفر",
+  "update_message": "إصلاح فتح أقسام لاروزا وتحديث عنوان الموقع ومهلة الاتصال، وتصحيح رقم الإصدار. أوسكار ما زال تجريبياً وقد يرفض الخادم الاتصال.",
   "notice": {
     "enabled": false,
     "id": "",
