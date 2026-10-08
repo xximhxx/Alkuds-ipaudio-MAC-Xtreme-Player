@@ -7,7 +7,7 @@
 # Commands that could read stdin get </dev/null, because stdin is this script.
 
 main() {
-    FILE="Alkuds_ipaudio-r148.ipk"
+    FILE="Alkuds_ipaudio-r147.ipk"
     URL="https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main/$FILE"
     TMP="/tmp/$FILE"
     MIN_BYTES=500000
