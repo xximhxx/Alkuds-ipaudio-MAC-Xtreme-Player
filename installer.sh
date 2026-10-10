@@ -1,7 +1,8 @@
 #!/bin/sh
-# Latest numbered package from the configured repository; no cached-version veto.
+# Always install the package linked here. No version comparison or GitHub API check.
 BASE="https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main"
-API="https://api.github.com/repos/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/contents/?ref=main"
+PACKAGE_NAME="Alkuds_ipaudio-r154.ipk"
+PACKAGE_URL="$BASE/$PACKAGE_NAME"
 LOCK="/tmp/alkuds-update.lock"
 if ! mkdir "$LOCK" 2>/dev/null; then
     echo "Another Alkuds update is running. Wait for it to finish."
@@ -21,25 +22,8 @@ for candidate in python3 python; do
 done
 [ -n "$PYTHON" ] || fail "Python is unavailable"
 STAMP=$(date +%s)
-echo "Checking the latest numbered GitHub package..."
-wget -T 30 -O "$LIST_FILE" "$API&t=$STAMP" || fail "Cannot check GitHub. Please retry later."
-PACKAGE_NAME=$("$PYTHON" - "$LIST_FILE" <<'PY'
-import json,re,sys
-with open(sys.argv[1]) as f: data=json.load(f)
-if not isinstance(data,list): raise ValueError('GitHub did not return the repository files')
-names=[]
-for item in data:
-    if not isinstance(item,dict) or item.get('type')!='file': continue
-    name=item.get('name','')
-    m=re.match(r'^Alkuds_ipaudio-r(\d+)\.ipk$',name,re.I)
-    if m: names.append((int(m.group(1)),name))
-if not names: raise ValueError('No numbered Alkuds IPK found')
-print(max(names)[1])
-PY
-) || fail "Cannot identify the latest GitHub IPK"
-[ -n "$PACKAGE_NAME" ] || fail "No latest package found"
 echo "Downloading $PACKAGE_NAME"
-wget -T 30 -O "$PACKAGE_FILE" "$BASE/$PACKAGE_NAME?t=$STAMP" || fail "Download failed"
+wget -T 30 -O "$PACKAGE_FILE" "$PACKAGE_URL?t=$STAMP" || fail "Download failed"
 [ -s "$PACKAGE_FILE" ] || fail "The downloaded package is empty"
 "$PYTHON" - "$PACKAGE_FILE" <<'PY'
 import sys
