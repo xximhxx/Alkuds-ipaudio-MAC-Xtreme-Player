@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r183",
-  "display_version": "r183",
-  "update_title": "تحديث القدس r183",
-  "update_message": "تحديث نظام الصوتيات واضافة مصادر مجانية.",
+  "latest_version": "r184",
+  "display_version": "r184",
+  "update_title": "تحديث القدس r184",
+  "update_message": "إضافة Cricfy TV للمباريات والأحداث والقنوات، مع الحفاظ على تشغيل الصوت والتايم شيفت من r177.",
   "notice": {
     "enabled": true,
-    "id": "20261012-r183-r177-theme-001",
-    "title": "تحديث القدس r183",
-    "message": "تحديث نظام الصوتيات واضافة مصادر مجانية."
+    "id": "20261013-r184-r177-theme-001",
+    "title": "تحديث القدس r184",
+    "message": "إضافة Cricfy TV للمباريات والأحداث والقنوات، مع الحفاظ على تشغيل الصوت والتايم شيفت من r177."
   }
 }
