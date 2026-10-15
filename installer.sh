@@ -1,7 +1,7 @@
 #!/bin/sh
 # Always install the package linked here. No version comparison or GitHub API check.
 BASE="https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main"
-PACKAGE_NAME="Alkuds_ipaudio-r191.ipk"
+PACKAGE_NAME="Alkuds_ipaudio-r191-Flashback-BETA3-COUNTER4-INSTALLFIX1.ipk"
 PACKAGE_URL="$BASE/$PACKAGE_NAME"
 LOCK="/tmp/alkuds-update.lock"
 if ! mkdir "$LOCK" 2>/dev/null; then
@@ -16,11 +16,27 @@ trap cleanup EXIT
 trap 'exit 1' HUP INT TERM
 fail() { echo "ERROR: $*"; exit 1; }
 command -v opkg >/dev/null 2>&1 || fail "opkg is unavailable"
-PYTHON=""
-for candidate in python3 python; do
-    if command -v "$candidate" >/dev/null 2>&1; then PYTHON="$candidate"; break; fi
+# Detect an actual Python 3 executable, including versioned image binaries.
+# A Python 2 Enigma2 cannot load Python 3 plugins just by installing Python 3.
+for e2pid in $(pidof enigma2 2>/dev/null); do
+    if grep -q 'libpython2[.]' "/proc/$e2pid/maps" 2>/dev/null; then
+        echo "ERROR: This Enigma2 uses Python 2. This package needs a separate Python 2 port. No installation attempted."
+        exit 1
+    fi
 done
-[ -n "$PYTHON" ] || fail "Python is unavailable"
+ALKUDS_PYTHON=""
+for candidate in python3 python3.14 python3.13 python3.12 python3.11 python3.10 python3.9 python3.8 python3.7 python3.6 python; do
+    if command -v "$candidate" >/dev/null 2>&1 && "$candidate" -c 'import sys; sys.exit(0 if sys.version_info[0] == 3 else 1)' >/dev/null 2>&1; then
+        ALKUDS_PYTHON="$candidate"
+        break
+    fi
+done
+if [ -z "$ALKUDS_PYTHON" ]; then
+    echo "ERROR: No usable Python 3 interpreter found. This is a runtime compatibility issue, not a download error."
+    echo "Do not install another Python version blindly; use a build matching the image's Enigma2 Python."
+    exit 1
+fi
+PYTHON="$ALKUDS_PYTHON"
 STAMP=$(date +%s)
 echo "Downloading $PACKAGE_NAME"
 wget -T 30 -O "$PACKAGE_FILE" "$PACKAGE_URL?t=$STAMP" || fail "Download failed"
@@ -64,5 +80,5 @@ if opkg status "$OLD_PACKAGE" 2>/dev/null | grep -q 'Status:.*installed'; then
     opkg_retry remove --force-depends "$OLD_PACKAGE" || fail "Cannot remove the old package"
 fi
 echo "Installing $PACKAGE_NAME..."
-opkg_retry install --force-reinstall --force-overwrite --force-downgrade "$PACKAGE_FILE" || fail "Alkuds installation failed; see the error above"
+opkg_retry install --force-reinstall --force-overwrite --force-downgrade "$PACKAGE_FILE" || fail "opkg reported errors; inspect Alkuds and any other pending packages above. Other plugins were not modified by this installer"
 echo "Alkuds update completed. Restart the Enigma2 interface."

@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r191",
-  "display_version": "r191",
-  "update_title": "تحديث القدس r191",
-  "update_message": "عرض الحدث الحالي ووقته داخل لوحة عيار التايم شيفت، مع تحديثه عند تغيير الصوتية.",
+  "latest_version": "r191-flashback-beta3-counter4-installfix1",
+  "display_version": "r191-flashback-beta3-counter4-installfix1",
+  "update_title": "القدس Flashback COUNTER4 — تصحيح التثبيت",
+  "update_message": "نسخة تجريبية: عداد التأخير وخيار ip2sat مع إصلاح اكتشاف بايثون في المثبت. لا تتضمن دعماً لبايثون 2.",
   "notice": {
     "enabled": true,
-    "id": "20261013-r191-popup-event-001",
-    "title": "تحديث القدس r191",
-    "message": "عرض الحدث الحالي ووقته داخل لوحة عيار التايم شيفت، مع تحديثه عند تغيير الصوتية."
+    "id": "20261015-counter4-installfix1",
+    "title": "القدس Flashback COUNTER4 — تصحيح التثبيت",
+    "message": "نسخة تجريبية: عداد التأخير وخيار ip2sat مع إصلاح اكتشاف بايثون في المثبت. لا تتضمن دعماً لبايثون 2."
   }
 }
