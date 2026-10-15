@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r191-flashback-beta3-counter4-installfix1",
-  "display_version": "r191-flashback-beta3-counter4-installfix1",
-  "update_title": "القدس Flashback COUNTER4 — تصحيح التثبيت",
-  "update_message": "نسخة تجريبية: عداد التأخير وخيار ip2sat مع إصلاح اكتشاف بايثون في المثبت. لا تتضمن دعماً لبايثون 2.",
+  "latest_version": "r191-flashback-beta3-counter4-installfix4",
+  "display_version": "r191-flashback-beta3-counter4-installfix4",
+  "update_title": "القدس COUNTER4 — تحديث INSTALLFIX4",
+  "update_message": "نسخة تجريبية تحافظ على العداد وip2sat وتصحيح التحديث والمثبت، مع تنظيف النصوص  معطلة.",
   "notice": {
     "enabled": true,
-    "id": "20261015-counter4-installfix1",
-    "title": "القدس Flashback COUNTER4 — تصحيح التثبيت",
-    "message": "نسخة تجريبية: عداد التأخير وخيار ip2sat مع إصلاح اكتشاف بايثون في المثبت. لا تتضمن دعماً لبايثون 2."
+    "id": "20261015-counter4-installfix4",
+    "title": "القدس COUNTER4 — تحديث INSTALLFIX4",
+    "message": "نسخة تجريبية تحافظ على العداد وip2sat وتصحيح التحديث والمثبت، مع تنظيف النصوص  معطلة."
   }
 }
