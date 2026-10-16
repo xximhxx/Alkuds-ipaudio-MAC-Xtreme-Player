@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r191-flashback-beta3-counter4-novaler2",
-  "display_version": "r191-flashback-beta3-counter4-novaler2",
-  "update_title": "القدس COUNTER4 NOVALER2 — معالجة انقطاع صورة التسجيل",
-  "update_message": "التحقق من توقف مؤشر تشغيل الملف على نوفالير قبل إيقاف الصورة وإعادة فتح التسجيل، مع الاحتفاظ بمسار الصوت الذي نجح في السجل وبقية الإضافات.",
+  "latest_version": "r191-flashback-beta3-counter4-startfix1",
+  "display_version": "r191-flashback-beta3-counter4-startfix1",
+  "update_title": "القدس COUNTER4 STARTFIX1 — إصلاح كراش فتح البلجن",
+  "update_message": "تجاوز روابط الاشتراك ذات المنفذ أو العنوان المعطوب دون انهيار الواجهة. ملفات الصوت والتايم شيفت والثيم دون تغيير.",
   "notice": {
     "enabled": true,
-    "id": "20261016-counter4-novaler2",
-    "title": "القدس COUNTER4 NOVALER2 — معالجة انقطاع صورة التسجيل",
-    "message": "التحقق من توقف مؤشر تشغيل الملف على نوفالير قبل إيقاف الصورة وإعادة فتح التسجيل، مع الاحتفاظ بمسار الصوت الذي نجح في السجل وبقية الإضافات."
+    "id": "20261016-counter4-startfix1",
+    "title": "القدس COUNTER4 STARTFIX1 — إصلاح كراش فتح البلجن",
+    "message": "تجاوز روابط الاشتراك ذات المنفذ أو العنوان المعطوب دون انهيار الواجهة. ملفات الصوت والتايم شيفت والثيم دون تغيير."
   }
 }
