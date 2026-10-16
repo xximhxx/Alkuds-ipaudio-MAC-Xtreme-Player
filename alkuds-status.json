@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r191-flashback-beta3-counter4-startfix1",
-  "display_version": "r191-flashback-beta3-counter4-startfix1",
-  "update_title": "القدس COUNTER4 STARTFIX1 — إصلاح كراش فتح البلجن",
-  "update_message": "تجاوز روابط الاشتراك ذات المنفذ أو العنوان المعطوب دون انهيار الواجهة. ملفات الصوت والتايم شيفت والثيم دون تغيير.",
+  "latest_version": "r191-flashback-beta3-counter4-audiofix3",
+  "display_version": "r191-flashback-beta3-counter4-audiofix3",
+  "update_title": "القدس COUNTER4 AUDIOFIX3 — إصلاح فتح سات فاميلي وأورانج",
+  "update_message": "حفظ التوكن وبيانات الدخول بجانب الرابط، واستخدام قنوات المزود عندما يكون الرابط صفحة موقع. الحفاظ على إصلاح الكراش ونظام التايم شيفت والثيم.",
   "notice": {
     "enabled": true,
-    "id": "20261016-counter4-startfix1",
-    "title": "القدس COUNTER4 STARTFIX1 — إصلاح كراش فتح البلجن",
-    "message": "تجاوز روابط الاشتراك ذات المنفذ أو العنوان المعطوب دون انهيار الواجهة. ملفات الصوت والتايم شيفت والثيم دون تغيير."
+    "id": "20261016-counter4-audiofix3",
+    "title": "القدس COUNTER4 AUDIOFIX3 — إصلاح فتح سات فاميلي وأورانج",
+    "message": "حفظ التوكن وبيانات الدخول بجانب الرابط، واستخدام قنوات المزود عندما يكون الرابط صفحة موقع. الحفاظ على إصلاح الكراش ونظام التايم شيفت والثيم."
   }
 }
