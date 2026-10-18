@@ -1,7 +1,7 @@
 #!/bin/sh
 # Always install the package linked here. No version comparison or GitHub API check.
 BASE="https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main"
-PACKAGE_NAME="Alkuds_ipaudio-r194-FIX5.ipk"
+PACKAGE_NAME="Alkuds_ipaudio-r194-FIX9.ipk"
 PACKAGE_URL="$BASE/$PACKAGE_NAME"
 LOCK="/tmp/alkuds-update.lock"
 if ! mkdir "$LOCK" 2>/dev/null; then
@@ -79,6 +79,14 @@ fi
 if opkg status "$OLD_PACKAGE" 2>/dev/null | grep -q 'Status:.*installed'; then
     opkg_retry remove --force-depends "$OLD_PACKAGE" || fail "Cannot remove the old package"
 fi
+export ALKUDS_PYTHON
+export ALKUDS_DEPS_FOREGROUND=1
 echo "Installing $PACKAGE_NAME..."
 opkg_retry install --force-reinstall --force-overwrite --force-downgrade "$PACKAGE_FILE" || fail "opkg reported errors; inspect Alkuds and any other pending packages above. Other plugins were not modified by this installer"
-echo "Alkuds update completed. Restart the Enigma2 interface."
+DEPS=/usr/lib/enigma2/python/Plugins/Extensions/Alkuds/dependencies.sh
+if [ -r "$DEPS" ]; then
+    echo "Checking audio/video tools using this image's configured feeds..."
+    sh "$DEPS" installer || echo "Dependency setup needs attention. See /tmp/ipaudio-dependencies.log"
+fi
+echo "Alkuds update completed. Review /tmp/ipaudio-dependencies.log for unavailable tools."
+echo "Restart the Enigma2 interface after setup completes."
