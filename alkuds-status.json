@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r202",
-  "display_version": "r202",
-  "update_title": "القدس r202 - Cricfy",
-  "update_message": "إعادة Cricfy للمباريات والأحداث والقنوات ",
+  "latest_version": "r208",
+  "display_version": "r208",
+  "update_title": "القدس r208 - عرض الجودات",
+  "update_message": "تعديلات على CINEHD",
   "notice": {
     "enabled": true,
-    "id": "20261020-r202",
-    "title": "القدس r202 - Cricfy",
-    "message": "إعادة Cricfy للمباريات والأحداث والقنوات ."
+    "id": "20261020-r208",
+    "title": "القدس r208 - عرض الجودات",
+    "message": "CINEHD تعديلات على "
   }
 }
