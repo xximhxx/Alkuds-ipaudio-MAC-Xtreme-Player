@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r208",
-  "display_version": "r208",
-  "update_title": "القدس r208 - عرض الجودات",
-  "update_message": "تعديلات على CINEHD",
+  "latest_version": "r211",
+  "display_version": "r211",
+  "update_title": "القدس r211 - اضافة ايجي بيست",
+  "update_message": "اضافة محتوى ايجي بيست.",
   "notice": {
     "enabled": true,
-    "id": "20261020-r208",
-    "title": "القدس r208 - عرض الجودات",
-    "message": "CINEHD تعديلات على "
+    "id": "20261020-r211",
+    "title": "القدس r211 - اضافة ايجي بيست",
+    "message": "اضافة محتوى ايجي بيست."
   }
 }
