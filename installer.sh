@@ -42,9 +42,12 @@ echo "Downloading $PACKAGE_NAME"
 wget -T 30 -O "$PACKAGE_FILE" "$PACKAGE_URL?t=$STAMP" || fail "Download failed"
 [ -s "$PACKAGE_FILE" ] || fail "The downloaded package is empty"
 "$PYTHON" - "$PACKAGE_FILE" <<'PY'
-import sys
+import sys, hashlib
 with open(sys.argv[1],'rb') as f:
     if f.read(8)!=b'!<arch>\n': raise ValueError('Downloaded file is not an IPK')
+    f.seek(0)
+    if hashlib.sha256(f.read()).hexdigest() != '0ba6ee66795323699600e83e2f1cd73c72e0dedd2b55a3803ee74fabe13799a0':
+        raise ValueError('The downloaded package is outdated or mismatched. Upload all three release files together.')
 PY
 [ "$?" -eq 0 ] || fail "Invalid downloaded package"
 
@@ -83,6 +86,16 @@ export ALKUDS_PYTHON
 export ALKUDS_DEPS_FOREGROUND=1
 echo "Installing $PACKAGE_NAME..."
 opkg_retry install --force-reinstall --force-overwrite --force-downgrade "$PACKAGE_FILE" || fail "opkg reported errors; inspect Alkuds and any other pending packages above. Other plugins were not modified by this installer"
+"$PYTHON" - <<'PY'
+import hashlib
+path='/usr/lib/enigma2/python/Plugins/Extensions/Alkuds/subscriptioncheck.py'
+with open(path,'rb') as handle: content=handle.read()
+if hashlib.sha256(content).hexdigest() != '8f55e75d16673eca4e142901282ea3882f83ae83d73d7ea491d59e1be60218c5':
+    raise ValueError('Installed menu does not match this release')
+if b'backup_one' in content or b'backup_all' in content:
+    raise ValueError('Old menu entries are still installed')
+PY
+[ "$?" -eq 0 ] || fail "Installed menu verification failed"
 DEPS=/usr/lib/enigma2/python/Plugins/Extensions/Alkuds/dependencies.sh
 if [ -r "$DEPS" ]; then
     echo "Checking audio/video tools using this image's configured feeds..."
