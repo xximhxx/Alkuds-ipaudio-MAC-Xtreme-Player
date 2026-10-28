@@ -1,7 +1,7 @@
 #!/bin/sh
 # Always install the package linked here. No version comparison or GitHub API check.
 BASE="https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main"
-PACKAGE_NAME="Alkuds_ipaudio-r219.ipk"
+PACKAGE_NAME="Alkuds_ipaudio-r222.ipk"
 PACKAGE_URL="$BASE/$PACKAGE_NAME"
 LOCK="/tmp/alkuds-update.lock"
 if ! mkdir "$LOCK" 2>/dev/null; then
@@ -46,7 +46,7 @@ import sys, hashlib
 with open(sys.argv[1],'rb') as f:
     if f.read(8)!=b'!<arch>\n': raise ValueError('Downloaded file is not an IPK')
     f.seek(0)
-    if hashlib.sha256(f.read()).hexdigest() != '0ba6ee66795323699600e83e2f1cd73c72e0dedd2b55a3803ee74fabe13799a0':
+    if hashlib.sha256(f.read()).hexdigest() != 'eb891f335759baebcc1ef92dc475361c59eacdd4aecf4a0427760b6c5f601a0b':
         raise ValueError('The downloaded package is outdated or mismatched. Upload all three release files together.')
 PY
 [ "$?" -eq 0 ] || fail "Invalid downloaded package"
