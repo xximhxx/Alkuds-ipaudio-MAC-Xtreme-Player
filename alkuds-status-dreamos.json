@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "latest_version": "r223-dreamos-py27",
+  "display_version": "٢٢٣ — دريم أو إس تجريبي",
+  "update_title": "القدس — دريم أو إس",
+  "update_message": "التشغيل على دريم او اس.",
+  "notice": {
+    "enabled": true,
+    "id": "20261029-r223-dreamos-gui23",
+    "title": "القدس — دريم أو إس",
+    "message": "التشغيل على دريم او اس."
+  }
+}
