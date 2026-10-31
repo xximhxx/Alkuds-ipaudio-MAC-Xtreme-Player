@@ -15,15 +15,51 @@ cleanup() { rm -f "$PACKAGE_FILE" "$LIST_FILE" "$LOG_FILE"; rmdir "$LOCK" 2>/dev
 trap cleanup EXIT
 trap 'exit 1' HUP INT TERM
 fail() { echo "ERROR: $*"; exit 1; }
-command -v opkg >/dev/null 2>&1 || fail "opkg is unavailable"
 # Detect an actual Python 3 executable, including versioned image binaries.
 # A Python 2 Enigma2 cannot load Python 3 plugins just by installing Python 3.
+IS_PY2=0
 for e2pid in $(pidof enigma2 2>/dev/null); do
-    if grep -q 'libpython2[.]' "/proc/$e2pid/maps" 2>/dev/null; then
-        echo "ERROR: This Enigma2 uses Python 2. This package needs a separate Python 2 port. No installation attempted."
-        exit 1
-    fi
+    if grep -q 'libpython2[.]' "/proc/$e2pid/maps" 2>/dev/null; then IS_PY2=1; fi
 done
+if [ "$IS_PY2" = "1" ]; then
+    # ---------- Python 2 Enigma2 (DreamOS DM900/DM920, old OpenATV/OpenPLi): separate PY27 package ----------
+    PY2_NAME="Alkuds_ipaudio-r223-DreamOS-PY27.deb"
+    PY2_SHA="17379bb4e50b8de37f9456f532657690ade604eba340c4138ecd6afb9cf1a492"
+    PY2_FILE="/tmp/Alkuds_py27-$$.deb"
+    PY2_IPK="/tmp/Alkuds_py27-$$.ipk"
+    trap 'rm -f "$PY2_FILE" "$PY2_IPK"; rmdir "$LOCK" 2>/dev/null' EXIT
+    echo "Python 2 Enigma2 detected - installing the Python 2.7 build."
+    if [ -n "$1" ] && [ -s "$1" ]; then
+        cp "$1" "$PY2_FILE" || fail "Cannot read $1"
+        echo "Using local package: $1"
+    else
+        wget -T 30 -O "$PY2_FILE" "$BASE/$PY2_NAME?t=$(date +%s)" || fail "Download failed ($BASE/$PY2_NAME)"
+    fi
+    [ -s "$PY2_FILE" ] || fail "The downloaded package is empty"
+    if [ "$(head -c 8 "$PY2_FILE")" != "!<arch>" ]; then fail "Downloaded file is not a valid package"; fi
+    if command -v sha256sum >/dev/null 2>&1 && [ -z "$1" ]; then
+        GOT=$(sha256sum "$PY2_FILE" | cut -d' ' -f1)
+        [ "$GOT" = "$PY2_SHA" ] || fail "Package checksum mismatch (outdated upload?). expected $PY2_SHA got $GOT"
+    fi
+    if command -v dpkg >/dev/null 2>&1 && [ -f /var/lib/dpkg/status ]; then
+        echo "Installing with dpkg (DreamOS)..."
+        dpkg -i --force-overwrite --force-downgrade "$PY2_FILE" || fail "dpkg reported errors"
+    elif command -v opkg >/dev/null 2>&1; then
+        cp "$PY2_FILE" "$PY2_IPK"
+        echo "Installing with opkg..."
+        opkg install --force-reinstall --force-overwrite --force-downgrade "$PY2_IPK" || fail "opkg reported errors"
+    else
+        fail "Neither dpkg nor opkg is available"
+    fi
+    DEPS=/usr/lib/enigma2/python/Plugins/Extensions/Alkuds/dependencies.sh
+    if [ -r "$DEPS" ]; then
+        echo "Checking optional audio/video tools (failures here do not affect the plugin install)..."
+        ALKUDS_PYTHON=python2.7 sh "$DEPS" installer || echo "Optional tools need attention. See /tmp/ipaudio-dependencies.log"
+    fi
+    echo "Alkuds (Python 2.7 build) installed. Restart the Enigma2 interface."
+    exit 0
+fi
+command -v opkg >/dev/null 2>&1 || fail "opkg is unavailable"
 ALKUDS_PYTHON=""
 for candidate in python3 python3.14 python3.13 python3.12 python3.11 python3.10 python3.9 python3.8 python3.7 python3.6 python; do
     if command -v "$candidate" >/dev/null 2>&1 && "$candidate" -c 'import sys; sys.exit(0 if sys.version_info[0] == 3 else 1)' >/dev/null 2>&1; then
