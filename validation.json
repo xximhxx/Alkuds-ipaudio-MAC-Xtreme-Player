@@ -1,0 +1,34 @@
+{
+  "version": "223.0+dreamos25",
+  "base_sha256": "17379bb4e50b8de37f9456f532657690ade604eba340c4138ecd6afb9cf1a492",
+  "sha256": "51655d3fae9b4b7e8c5998d19f51693fa171b2fdd8bfed1d50731cdeeb45c6f4",
+  "only_payload_change": [
+    "usr/lib/enigma2/python/Plugins/Extensions/Alkuds/videopmt.py"
+  ],
+  "all_other_r24_payload_unchanged": true,
+  "offline": {
+    "python": "2.7.11",
+    "pat_pmt_and_video_regressions_passed": true,
+    "actual_receiver_buffer_fixed_first_pcr": 18048,
+    "actual_receiver_buffer_original_first_pcr": 1072540
+  },
+  "receiver": "DM900 DreamOS Python2.7.11",
+  "receiver_before_length_error": -1,
+  "receiver_after_length_error": 0,
+  "receiver_continuous_playback_observed_seconds": 43,
+  "separate_audio_source_404_seen": true,
+  "public_installer_unified": true,
+  "zip": "outputs\\Alkuds-r223-DreamOS-PY27-rev25-update.zip",
+  "receiver_final_state": "PLAYING",
+  "receiver_final_length": [
+    0,
+    21909914
+  ],
+  "receiver_final_position": [
+    0,
+    21387901
+  ],
+  "receiver_second_run_continuous_seconds": 69,
+  "hotfix_installed_on_receiver": true,
+  "temporary_web_probe_removed": true
+}

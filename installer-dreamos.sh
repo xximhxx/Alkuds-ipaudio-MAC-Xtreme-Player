@@ -28,7 +28,7 @@ fi
 "$PY" - "$FILE" <<'PY'
 import sys,hashlib
 with open(sys.argv[1],'rb') as handle:data=handle.read()
-if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='17379bb4e50b8de37f9456f532657690ade604eba340c4138ecd6afb9cf1a492':
+if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='51655d3fae9b4b7e8c5998d19f51693fa171b2fdd8bfed1d50731cdeeb45c6f4':
     raise SystemExit('The DreamOS package is outdated or mismatched. Upload all three release files together.')
 PY
 # Only use the receiver's configured feeds. Never install another Python runtime.
