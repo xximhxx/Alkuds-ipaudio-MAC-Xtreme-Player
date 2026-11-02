@@ -1,4 +1,4 @@
-رفع إصدار القدس r227 — النسخة العادية ونسخة دريم أو إس
+رفع إصدار القدس r228 — النسخة العادية ونسخة دريم أو إس
 =========================================================
 
 ارفع الملفات الستة الموجودة في هذا المجلد إلى جذر فرع main في المستودع،
@@ -6,8 +6,8 @@
 
   installer.sh
   alkuds-status.json
-  Alkuds_ipaudio-r227.ipk
-  Alkuds_ipaudio-r227-DreamOS-PY27.deb
+  Alkuds_ipaudio-r228.ipk
+  Alkuds_ipaudio-r228-DreamOS-PY27.deb
   alkuds-status-dreamos.json
   installer-dreamos.sh
 
@@ -20,29 +20,28 @@
   wget -qO- https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main/installer.sh | sh
 
 الطريقة:
-- إذا كانت Enigma2 تعمل ببايثون 3، يثبت installer.sh الحزمة Alkuds_ipaudio-r227.ipk.
+- إذا كانت Enigma2 تعمل ببايثون 3، يثبت installer.sh الحزمة Alkuds_ipaudio-r228.ipk.
 - إذا كانت Enigma2 تعمل ببايثون 2.7 على دريم أو إس، يثبت installer.sh الحزمة
-  Alkuds_ipaudio-r227-DreamOS-PY27.deb تلقائيًا.
+  Alkuds_ipaudio-r228-DreamOS-PY27.deb تلقائيًا.
 - لا حاجة لتغيير الأمر أو اختيار ملف يدويًا.
 
 البصمات SHA-256:
-  installer.sh                          6ed2809658c05d55cae0dacb974f3d035cf5b18655cc0e8d85289a3ed4debb7c
-  alkuds-status.json                    1dc4bb3459e9b8afad8524dc13e2d35da7063fd616b121bf2c5b005eccb5230c
-  Alkuds_ipaudio-r227.ipk               a2729e4a2180185d6057827693cf5303f0751a7d940d3b2856d0a642f4b3c666
-  Alkuds_ipaudio-r227-DreamOS-PY27.deb  d842212c2f735a91de584d6322c4f3fdb9d53b90ce3850d4f0018d28f8d71224
-  alkuds-status-dreamos.json            c27176ce6dfba2ca565d8943e2303469afb2e583204e345f235ab078dddacb1e
-  installer-dreamos.sh                  704db2bf5cf2be3c5794e3b1e2cc0d6c641d61f6010ee7a2bae9c65731e5ebbd
+  installer.sh                          fc8d276b68722be9e26563eb42c776c66b694a2ae3b10559c9b7f6214bf5bd71
+  alkuds-status.json                    b2bfa5ca2e53dedac99b1ef6ae0613a1326b0f3d645b5765ff576cfaa654e912
+  Alkuds_ipaudio-r228.ipk              74da272310342f5f12f45860a0137d9f5dc7cc21191be1355314dab9b587bd54
+  Alkuds_ipaudio-r228-DreamOS-PY27.deb 0bad0c38c787b8166cd0eb87e05c054f349d8bb38ec0441b2087c3367463b934
+  alkuds-status-dreamos.json            6fa6506dbc644f37a44de824f8eb8340c3a4eabed85b507966a443e3a15c39c6
+  installer-dreamos.sh                  d119d5d0e5547801a82d19c119767f30cb0571e5945dba0c65943dd050ecc8e9
 
 ما الجديد:
-- إصلاح حفظ اشتراك الصوتيات من صفحة الويب في النسختين.
-- إزالة خطأ HTTP 403 الذي كان يظهر عند اختلاف المنفذ أو بروتوكول الصفحة.
-- إبقاء حماية CSRF إلزامية لكل عملية حفظ.
-- إصلاح إضافي في نسخة دريم أو إس: فحص عنوان العميل كان يرفض كل الطلبات
-  بسبب تحويل النص إلى bytes في بايثون 2.7.
+- إصلاح جلب المسلسلات والأفلام من EgyDead عبر النطاق a1.egydead.media
+  ودعم مشغلات MegaMax، ومن ArabSeed عبر مرآة الموبايل m.asd.watch.
+- تحديث معرّفات أقسام Laroza للأفلام العربية والمسلسلات التركية.
+- استبعاد محتوى +18 وقسم VIP من نتائج المزودين الثلاثة.
+- الإبقاء على إصلاح حفظ اشتراك الصوتيات من صفحة الويب (r227).
 
 ملاحظات:
-- نسخة دريم أو إس مبنية على فرع r223-dreamos مع إصلاح حفظ الصوتيات،
+- نسخة دريم أو إس مبنية على فرع r223-dreamos مع إصلاحات المزودين،
   ولا تتضمن إضافات 5TV الخاصة بنسخة بايثون 3.
-- بعد التثبيت أعد تشغيل الواجهة من قائمة الرسيفر، ثم افتح صفحة الصوتيات
-  من جديد ولا تستخدم صفحة قديمة مفتوحة قبل التحديث.
+- بعد التثبيت أعد تشغيل الواجهة من قائمة الرسيفر.
 - نسخة دريم أو إس ما زالت تجريبية وتحتاج اختبارًا على الرسيفر.
