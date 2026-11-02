@@ -1,34 +1,22 @@
 {
-  "version": "223.0+dreamos25",
-  "base_sha256": "17379bb4e50b8de37f9456f532657690ade604eba340c4138ecd6afb9cf1a492",
-  "sha256": "51655d3fae9b4b7e8c5998d19f51693fa171b2fdd8bfed1d50731cdeeb45c6f4",
-  "only_payload_change": [
-    "usr/lib/enigma2/python/Plugins/Extensions/Alkuds/videopmt.py"
-  ],
-  "all_other_r24_payload_unchanged": true,
-  "offline": {
-    "python": "2.7.11",
-    "pat_pmt_and_video_regressions_passed": true,
-    "actual_receiver_buffer_fixed_first_pcr": 18048,
-    "actual_receiver_buffer_original_first_pcr": 1072540
+  "files": {
+    "Alkuds_ipaudio-r223.ipk": "c1257d8f4ba77c8d17259e1dc020a1d1887e2ba147620049c56d2ba18aa650f3",
+    "Alkuds_ipaudio-r223-DreamOS-PY27.deb": "6b55d9f3c1debbd83a950824eeb6dbf350ee1a8e308aebf64941bf3a39a27ea4",
+    "installer.sh": "a33b11ea063dc58e8934fd76961a6b82670ab3295f4f8a5c5953d4271aeab01b",
+    "installer-dreamos.sh": "2876c04bbcb5879aa09f5a71fbf4610a7f11cd2e200b51d7ed6ad17a7e53662a",
+    "alkuds-status.json": "9c9351701087b459a9e598bc4856be7eb360037f42c4fb34e6d8aa7685db37ca",
+    "alkuds-status-dreamos.json": "2f5e55cc196ca82d3a8cca2c3f1c6d635ff9b72b533f5c1158b7e80152e3e6da"
   },
-  "receiver": "DM900 DreamOS Python2.7.11",
-  "receiver_before_length_error": -1,
-  "receiver_after_length_error": 0,
-  "receiver_continuous_playback_observed_seconds": 43,
-  "separate_audio_source_404_seen": true,
-  "public_installer_unified": true,
-  "zip": "outputs\\Alkuds-r223-DreamOS-PY27-rev25-update.zip",
-  "receiver_final_state": "PLAYING",
-  "receiver_final_length": [
-    0,
-    21909914
-  ],
-  "receiver_final_position": [
-    0,
-    21387901
-  ],
-  "receiver_second_run_continuous_seconds": 69,
-  "hotfix_installed_on_receiver": true,
-  "temporary_web_probe_removed": true
+  "regular_base": "pre-DreamOS timeshift + user AlooYTV + native overlay fix",
+  "dreamos_version": "223.0+dreamos26",
+  "branches_separate": true,
+  "same_public_installer_url": true,
+  "shell_syntax": "passed",
+  "python2_and_python3_checksum_checks": "passed; wrong packages rejected",
+  "zip_verified": true,
+  "github_published": false,
+  "receiver_validation": {
+    "regular": "user reported working on OpenATV",
+    "dreamos26": "offline checks only; receiver validation incomplete"
+  }
 }

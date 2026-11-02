@@ -28,8 +28,8 @@ fi
 "$PY" - "$FILE" <<'PY'
 import sys,hashlib
 with open(sys.argv[1],'rb') as handle:data=handle.read()
-if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='51655d3fae9b4b7e8c5998d19f51693fa171b2fdd8bfed1d50731cdeeb45c6f4':
-    raise SystemExit('The DreamOS package is outdated or mismatched. Upload all three release files together.')
+if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='6b55d9f3c1debbd83a950824eeb6dbf350ee1a8e308aebf64941bf3a39a27ea4':
+    raise SystemExit('The DreamOS package is outdated or mismatched. Upload the matching release files together.')
 PY
 # Only use the receiver's configured feeds. Never install another Python runtime.
 if ! "$PY" -c 'import requests,six' >/dev/null 2>&1; then
