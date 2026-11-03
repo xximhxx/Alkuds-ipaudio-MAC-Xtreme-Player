@@ -87,7 +87,7 @@ fi
 "$PY" - "$FILE" <<'PY'
 import sys,hashlib
 with open(sys.argv[1],'rb') as handle:data=handle.read()
-if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='f2a7ffb20175994be65991e3c826ce96d754dea8a99135e989d63526a68e3c99':
+if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='eb76531f56e33ac7fde1a4058c3e9793c553bb045a5b84600c2881bb4f6968e5':
     raise SystemExit('The DreamOS package is outdated or mismatched. Upload the matching release files together.')
 PY
 # Only use the receiver's configured feeds. Never install another Python runtime.
@@ -150,7 +150,7 @@ import sys, hashlib
 with open(sys.argv[1],'rb') as f:
     if f.read(8)!=b'!<arch>\n': raise ValueError('Downloaded file is not an IPK')
     f.seek(0)
-    if hashlib.sha256(f.read()).hexdigest() != 'cba10a18119f6f1050c13b3c9a8a74e07306be91ce2ec8650c15047dcfcf8e0a':
+    if hashlib.sha256(f.read()).hexdigest() != '94ab3da64f89dc9d029eed9838de7017dd64e5e7f207806dfd90e1e9d85969ae':
         raise ValueError('The downloaded package is outdated or mismatched. Upload the matching release files together.')
 PY
 [ "$?" -eq 0 ] || fail "Invalid downloaded package"
