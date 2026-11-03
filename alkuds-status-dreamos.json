@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r230-dreamos-py27",
-  "display_version": "r230-dreamos-py27 — نسخة DreamOS",
+  "latest_version": "r231-dreamos-py27",
+  "display_version": "r231-dreamos-py27 — نسخة DreamOS",
   "update_title": "تحديث Alkuds",
-  "update_message": "تحديث DreamOS يصلح ظهور نصوص قائمة الترجمة والمشغلات، ويصلح تشغيل معظم قنوات Free Arabic TV على DreamOS بتمرير HLS عبر وسيط محلي يحفظ User-Agent وReferer ويتجاوز مشكلة شهادة HTTPS. أعد تشغيل الواجهة بعد التثبيت.",
+  "update_message": "تحديث DreamOS يصلح كراش التحديث من داخل البلجن، مع الاحتفاظ بإصلاحات قائمة الترجمة والمشغلات وبث Free Arabic TV من r230. يلزم تثبيت هذه النسخة أول مرة بأمر التلنت لأن الخلل موجود في المُحدّث القديم نفسه.",
   "notice": {
     "enabled": true,
-    "id": "20261103-r230-dreamos-live-menu",
+    "id": "20261103-r231-dreamos-updater-crash",
     "title": "تحديث Alkuds",
-    "message": "تحديث DreamOS يصلح ظهور نصوص قائمة الترجمة والمشغلات، ويصلح تشغيل معظم قنوات Free Arabic TV على DreamOS بتمرير HLS عبر وسيط محلي يحفظ User-Agent وReferer ويتجاوز مشكلة شهادة HTTPS. أعد تشغيل الواجهة بعد التثبيت."
+    "message": "تحديث DreamOS يصلح كراش التحديث من داخل البلجن، مع الاحتفاظ بإصلاحات قائمة الترجمة والمشغلات وبث Free Arabic TV من r230. يلزم تثبيت هذه النسخة أول مرة بأمر التلنت لأن الخلل موجود في المُحدّث القديم نفسه."
   }
 }
