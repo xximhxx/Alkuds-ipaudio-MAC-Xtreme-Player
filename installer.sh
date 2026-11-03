@@ -1,5 +1,28 @@
 #!/bin/sh
 # One public URL; choose the package matching Enigma2's actual Python runtime.
+download_file() {
+    url="$1"
+    dest="$2"
+    rm -f "$dest"
+    if command -v wget >/dev/null 2>&1; then
+        if wget --no-check-certificate -T 60 -O "$dest" "$url"; then
+            [ -s "$dest" ] && return 0
+        fi
+        rm -f "$dest"
+        if wget -T 60 -O "$dest" "$url"; then
+            [ -s "$dest" ] && return 0
+        fi
+    fi
+    rm -f "$dest"
+    if command -v curl >/dev/null 2>&1; then
+        if curl -kL --connect-timeout 20 --max-time 300 -o "$dest" "$url"; then
+            [ -s "$dest" ] && return 0
+        fi
+    fi
+    rm -f "$dest"
+    return 1
+}
+
 E2_MAJOR=""
 SEEN2=0
 SEEN3=0
@@ -37,7 +60,7 @@ case "$E2_MAJOR" in
         (
 set -eu
 BASE=https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main
-NAME=Alkuds_ipaudio-r228-DreamOS-PY27.deb
+NAME=Alkuds_ipaudio-r229-DreamOS-PY27.deb
 [ "$#" -le 1 ] || { echo "Usage: sh installer-dreamos.sh [local.deb]";exit 1; }
 FILE=""
 TEMP_FILE=""
@@ -56,7 +79,7 @@ done
 if [ "$#" -eq 0 ]; then
     TEMP_FILE=$(mktemp /tmp/alkuds-dreamos.XXXXXX)
     FILE="$TEMP_FILE"
-    wget -T 30 -O "$FILE" "$BASE/$NAME?t=$(date +%s)"
+    download_file "$BASE/$NAME?t=$(date +%s)" "$FILE" || { echo "Download failed. Check the network and receiver date, then retry.";exit 1; }
 else
     FILE="$1"
     [ -s "$FILE" ] || { echo "Local DEB not found: $FILE";exit 1; }
@@ -64,7 +87,7 @@ fi
 "$PY" - "$FILE" <<'PY'
 import sys,hashlib
 with open(sys.argv[1],'rb') as handle:data=handle.read()
-if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='0bad0c38c787b8166cd0eb87e05c054f349d8bb38ec0441b2087c3367463b934':
+if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='16767439b821adc8633968ac985354c4153b4efbcae31a43d6d32f2a1b53be3a':
     raise SystemExit('The DreamOS package is outdated or mismatched. Upload the matching release files together.')
 PY
 # Only use the receiver's configured feeds. Never install another Python runtime.
@@ -120,7 +143,7 @@ fi
 PYTHON="$ALKUDS_PYTHON"
 STAMP=$(date +%s)
 echo "Downloading $PACKAGE_NAME"
-wget -T 30 -O "$PACKAGE_FILE" "$PACKAGE_URL?t=$STAMP" || fail "Download failed"
+download_file "$PACKAGE_URL?t=$STAMP" "$PACKAGE_FILE" || fail "Download failed"
 [ -s "$PACKAGE_FILE" ] || fail "The downloaded package is empty"
 "$PYTHON" - "$PACKAGE_FILE" <<'PY'
 import sys, hashlib

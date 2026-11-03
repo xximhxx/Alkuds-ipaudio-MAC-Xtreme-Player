@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r228-dreamos-py27",
-  "display_version": "r228-dreamos-py27 — دريم أو إس",
-  "update_title": "القدس ٢٢٨ — دريم أو إس",
-  "update_message": "إصلاح جلب المسلسلات والأفلام من EgyDead وLaroza وArabSeed على نسخة دريم أو إس، مع استبعاد محتوى +18 وقسم VIP والإبقاء على إصلاح حفظ الصوتيات من صفحة الويب.",
+  "latest_version": "r229-dreamos-py27",
+  "display_version": "r229-dreamos-py27 — نسخة DreamOS",
+  "update_title": "تحديث Alkuds",
+  "update_message": "تحديث DreamOS يضيف QFilm وTukTuk و5TV وAlooYTV، ويصلح التحديث الداخلي الذي كان يسبب كراش. يشمل التحقق الآمن من الحزمة واستبعاد +18 وVIP. أعد تشغيل الواجهة بعد التثبيت.",
   "notice": {
     "enabled": true,
-    "id": "20261102-r228-dreamos-providers",
-    "title": "القدس ٢٢٨ — دريم أو إس",
-    "message": "إصلاح جلب المسلسلات والأفلام من EgyDead وLaroza وArabSeed على نسخة دريم أو إس، مع استبعاد محتوى +18 وقسم VIP والإبقاء على إصلاح حفظ الصوتيات من صفحة الويب."
+    "id": "20261102-r229-dreamos-sites",
+    "title": "تحديث Alkuds",
+    "message": "تحديث DreamOS يضيف QFilm وTukTuk و5TV وAlooYTV، ويصلح التحديث الداخلي الذي كان يسبب كراش. يشمل التحقق الآمن من الحزمة واستبعاد +18 وVIP. أعد تشغيل الواجهة بعد التثبيت."
   }
 }
