@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r229-dreamos-py27",
-  "display_version": "r229-dreamos-py27 — نسخة DreamOS",
+  "latest_version": "r230-dreamos-py27",
+  "display_version": "r230-dreamos-py27 — نسخة DreamOS",
   "update_title": "تحديث Alkuds",
-  "update_message": "تحديث DreamOS يضيف QFilm وTukTuk و5TV وAlooYTV، ويصلح التحديث الداخلي الذي كان يسبب كراش. يشمل التحقق الآمن من الحزمة واستبعاد +18 وVIP. أعد تشغيل الواجهة بعد التثبيت.",
+  "update_message": "تحديث DreamOS يصلح ظهور نصوص قائمة الترجمة والمشغلات، ويصلح تشغيل معظم قنوات Free Arabic TV على DreamOS بتمرير HLS عبر وسيط محلي يحفظ User-Agent وReferer ويتجاوز مشكلة شهادة HTTPS. أعد تشغيل الواجهة بعد التثبيت.",
   "notice": {
     "enabled": true,
-    "id": "20261102-r229-dreamos-sites",
+    "id": "20261103-r230-dreamos-live-menu",
     "title": "تحديث Alkuds",
-    "message": "تحديث DreamOS يضيف QFilm وTukTuk و5TV وAlooYTV، ويصلح التحديث الداخلي الذي كان يسبب كراش. يشمل التحقق الآمن من الحزمة واستبعاد +18 وVIP. أعد تشغيل الواجهة بعد التثبيت."
+    "message": "تحديث DreamOS يصلح ظهور نصوص قائمة الترجمة والمشغلات، ويصلح تشغيل معظم قنوات Free Arabic TV على DreamOS بتمرير HLS عبر وسيط محلي يحفظ User-Agent وReferer ويتجاوز مشكلة شهادة HTTPS. أعد تشغيل الواجهة بعد التثبيت."
   }
 }
