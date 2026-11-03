@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r231-dreamos-py27",
-  "display_version": "r231-dreamos-py27 — نسخة DreamOS",
+  "latest_version": "r232-dreamos-py27",
+  "display_version": "r232 — نسخة DreamOS",
   "update_title": "تحديث Alkuds",
-  "update_message": "تحديث DreamOS يصلح كراش التحديث من داخل البلجن، مع الاحتفاظ بإصلاحات قائمة الترجمة والمشغلات وبث Free Arabic TV من r230. يلزم تثبيت هذه النسخة أول مرة بأمر التلنت لأن الخلل موجود في المُحدّث القديم نفسه.",
+  "update_message": "الإصدار الموحد r232. يصلح كراش نهاية التحديث في DreamOS عبر تأجيل إغلاق نافذة التقدم ورسالة النجاح إلى ما بعد انتهاء callback الخاص بالمشغل، مع الاحتفاظ بإصلاحات القوائم وبث Free Arabic TV.",
   "notice": {
     "enabled": true,
-    "id": "20261103-r231-dreamos-updater-crash",
+    "id": "20261103-r232-dreamos-updater-finish",
     "title": "تحديث Alkuds",
-    "message": "تحديث DreamOS يصلح كراش التحديث من داخل البلجن، مع الاحتفاظ بإصلاحات قائمة الترجمة والمشغلات وبث Free Arabic TV من r230. يلزم تثبيت هذه النسخة أول مرة بأمر التلنت لأن الخلل موجود في المُحدّث القديم نفسه."
+    "message": "الإصدار الموحد r232. يصلح كراش نهاية التحديث في DreamOS عبر تأجيل إغلاق نافذة التقدم ورسالة النجاح إلى ما بعد انتهاء callback الخاص بالمشغل، مع الاحتفاظ بإصلاحات القوائم وبث Free Arabic TV."
   }
 }

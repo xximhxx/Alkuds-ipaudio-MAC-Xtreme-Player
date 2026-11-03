@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r228",
-  "display_version": "٢٢٨",
-  "update_title": "القدس ٢٢٨",
-  "update_message": "إصلاح جلب المسلسلات والأفلام من EgyDead وLaroza وArabSeed، مع استبعاد محتوى +18 وقسم VIP والإبقاء على إصلاح حفظ الصوتيات من صفحة الويب.",
+  "latest_version": "r232",
+  "display_version": "r232",
+  "update_title": "القدس r232",
+  "update_message": "الإصدار الموحد r232 للنظام العادي وDreamOS. نسخة Open تحتفظ بكامل إصلاحات r228 مع توحيد رقم الإصدار، ونسخة DreamOS تصلح كراش نهاية التحديث الداخلي.",
   "notice": {
     "enabled": true,
-    "id": "20261102-r228-providers",
-    "title": "القدس ٢٢٨",
-    "message": "إصلاح جلب المسلسلات والأفلام من EgyDead وLaroza وArabSeed، مع استبعاد محتوى +18 وقسم VIP والإبقاء على إصلاح حفظ الصوتيات من صفحة الويب."
+    "id": "20261103-r232-unified",
+    "title": "القدس r232",
+    "message": "الإصدار الموحد r232 للنظام العادي وDreamOS. نسخة Open تحتفظ بكامل إصلاحات r228 مع توحيد رقم الإصدار، ونسخة DreamOS تصلح كراش نهاية التحديث الداخلي."
   }
 }

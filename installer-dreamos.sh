@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 BASE=https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main
-NAME=Alkuds_ipaudio-r231-DreamOS-PY27.deb
+NAME=Alkuds_ipaudio-r232-DreamOS-PY27.deb
 [ "$#" -le 1 ] || { echo "Usage: sh installer-dreamos.sh [local.deb]";exit 1; }
 FILE=""
 TEMP_FILE=""
@@ -50,7 +50,7 @@ fi
 "$PY" - "$FILE" <<'PY'
 import sys,hashlib
 with open(sys.argv[1],'rb') as handle:data=handle.read()
-if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='059635eec410eadad316528f90f8ed9117c016e2b709bb2d388450c971a6ae11':
+if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='e47f832ca34cd0518633b251c1ba4c5b4040d8f263f70501343421d808f15515':
     raise SystemExit('The DreamOS package is outdated or mismatched. Upload the matching release files together.')
 PY
 # Only use the receiver's configured feeds. Never install another Python runtime.
@@ -62,3 +62,26 @@ dpkg --force-confold -i "$FILE"
 DEPS=/usr/lib/enigma2/python/Plugins/Extensions/Alkuds/dependencies.sh
 if [ -f "$DEPS" ]; then ALKUDS_PYTHON="$PY" sh "$DEPS" --auto || true;fi
 echo "Restart the GUI from the receiver menu. This is the DreamOS Python 2.7 build."
+internal_update=0
+ancestor=$PPID
+while [ -n "$ancestor" ] && [ "$ancestor" -gt 1 ] 2>/dev/null; do
+    command_name=$(cat "/proc/$ancestor/comm" 2>/dev/null || true)
+    if [ "$command_name" = "enigma2" ]; then internal_update=1;break;fi
+    ancestor=$(awk '/^PPid:/{print $2}' "/proc/$ancestor/status" 2>/dev/null || true)
+done
+if [ "$internal_update" = 1 ] && command -v systemctl >/dev/null 2>&1; then
+    old_enigma_pids=$(pidof enigma2 2>/dev/null || true)
+    echo "Internal update completed. Restarting Enigma2 safely..."
+    sync
+    if systemctl --no-block restart enigma2; then
+        wait_count=0
+        while [ "$wait_count" -lt 15 ]; do
+            alive=0
+            for old_pid in $old_enigma_pids; do kill -0 "$old_pid" 2>/dev/null && alive=1;done
+            [ "$alive" = 0 ] && exit 0
+            wait_count=$((wait_count + 1))
+            sleep 1
+        done
+    fi
+fi
+
