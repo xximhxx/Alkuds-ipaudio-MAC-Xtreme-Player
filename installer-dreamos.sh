@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 BASE=https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main
-NAME=Alkuds_ipaudio-r232-DreamOS-PY27.deb
+NAME=Alkuds_ipaudio-r233-DreamOS-PY27.deb
 [ "$#" -le 1 ] || { echo "Usage: sh installer-dreamos.sh [local.deb]";exit 1; }
 FILE=""
 TEMP_FILE=""
@@ -50,7 +50,7 @@ fi
 "$PY" - "$FILE" <<'PY'
 import sys,hashlib
 with open(sys.argv[1],'rb') as handle:data=handle.read()
-if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='e47f832ca34cd0518633b251c1ba4c5b4040d8f263f70501343421d808f15515':
+if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='f2a7ffb20175994be65991e3c826ce96d754dea8a99135e989d63526a68e3c99':
     raise SystemExit('The DreamOS package is outdated or mismatched. Upload the matching release files together.')
 PY
 # Only use the receiver's configured feeds. Never install another Python runtime.

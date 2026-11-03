@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r232-dreamos-py27",
-  "display_version": "r232 — نسخة DreamOS",
+  "latest_version": "r233-dreamos-py27",
+  "display_version": "r233 — نسخة DreamOS",
   "update_title": "تحديث Alkuds",
-  "update_message": "الإصدار الموحد r232. يصلح كراش نهاية التحديث في DreamOS عبر تأجيل إغلاق نافذة التقدم ورسالة النجاح إلى ما بعد انتهاء callback الخاص بالمشغل، مع الاحتفاظ بإصلاحات القوائم وبث Free Arabic TV.",
+  "update_message": "الإصدار r233 لنسخة DreamOS يضيف فحص وضبط ضمان التشغيل (ذاكرة التايم شيفت، المشغلات الثلاثة، سلامة الملفات) فوق إصلاح كراش نهاية التحديث من r232.",
   "notice": {
     "enabled": true,
-    "id": "20261103-r232-dreamos-updater-finish",
+    "id": "20261109-r233-dreamos-assurance",
     "title": "تحديث Alkuds",
-    "message": "الإصدار الموحد r232. يصلح كراش نهاية التحديث في DreamOS عبر تأجيل إغلاق نافذة التقدم ورسالة النجاح إلى ما بعد انتهاء callback الخاص بالمشغل، مع الاحتفاظ بإصلاحات القوائم وبث Free Arabic TV."
+    "message": "الإصدار r233 لنسخة DreamOS يضيف فحص وضبط ضمان التشغيل (ذاكرة التايم شيفت، المشغلات الثلاثة، سلامة الملفات) فوق إصلاح كراش نهاية التحديث من r232."
   }
 }
