@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r237-dreamos-py27",
-  "display_version": "٢٣٧",
-  "update_title": "القدس ٢٣٧ — ياسين TV",
-  "update_message": "إضافة ياسين TV بكامل تصنيفاته وجوداته المتاحة، تحديث عنوان المصدر تلقائياً، وإصلاح هيدرز UTF-8 وفك استجابات DreamOS. أعد تشغيل الواجهة بعد التثبيت.",
+  "latest_version": "r238-dreamos-py27",
+  "display_version": "٢٣٨",
+  "update_title": "القدس ٢٣٨ — CRICFy 7.4 و GeeSports 3.8",
+  "update_message": "تحديث مزوّد CRICFy إلى إصدار 7.4 مع تشغيل الروابط المتاحة وسياسة DRM، وإضافة قوالب GeeSports 3.8 (الأحداث والقنوات، مع استبعاد روابط ClearKey المحمية).",
   "notice": {
     "enabled": true,
-    "id": "20261105-r237-yacine-alkuds-status-dreamos.json",
-    "title": "القدس ٢٣٧ — ياسين TV",
-    "message": "إضافة ياسين TV بكامل تصنيفاته وجوداته المتاحة، تحديث عنوان المصدر تلقائياً، وإصلاح هيدرز UTF-8 وفك استجابات DreamOS. أعد تشغيل الواجهة بعد التثبيت."
+    "id": "20261105-r238-alkuds-status-dreamos.json",
+    "title": "القدس ٢٣٨ — CRICFy 7.4 و GeeSports 3.8",
+    "message": "تحديث مزوّد CRICFy إلى إصدار 7.4 مع تشغيل الروابط المتاحة وسياسة DRM، وإضافة قوالب GeeSports 3.8 (الأحداث والقنوات، مع استبعاد روابط ClearKey المحمية)."
   }
 }
