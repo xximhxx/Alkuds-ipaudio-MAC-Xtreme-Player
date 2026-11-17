@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r243-dreamos-py27",
-  "display_version": "٢٤٣",
-  "update_title": "القدس ٢٤٣ — إصلاح ياسين تي في",
-  "update_message": "اصلاح ياسين تي في",
+  "latest_version": "r244-dreamos-py27",
+  "display_version": "٢٤٤",
+  "update_title": "القدس ٢٤٤ — ياسين تي في يعود",
+  "update_message": "صُحّح اتصال ياسين تي في: عنوان الخادم الجديد def111.ycnapi.com وتوقيع التطبيق okhttp/4.12.0 الذي يطلبه المزوّد. القائمة والأقسام والقنوات تعمل الآن، مع تجربة بدائل تلقائية وحفظ آخر خادم ناجح.",
   "notice": {
     "enabled": true,
-    "id": "20261117-r243-yacine-alkuds-status-dreamos.json",
-    "title": "القدس ٢٤٣ — إصلاح ياسين تي في",
-    "message": "اصلاح ياسين تي في"
+    "id": "20261117-r244-yacine-alkuds-status-dreamos.json",
+    "title": "القدس ٢٤٤ — ياسين تي في يعود",
+    "message": "صُحّح اتصال ياسين تي في: عنوان الخادم الجديد def111.ycnapi.com وتوقيع التطبيق okhttp/4.12.0 الذي يطلبه المزوّد. القائمة والأقسام والقنوات تعمل الآن، مع تجربة بدائل تلقائية وحفظ آخر خادم ناجح."
   }
 }

@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r243",
-  "display_version": "٢٤٣",
-  "update_title": "القدس ٢٤٣ — إصلاح ياسين تي في",
-  "update_message": "اصلاح ياسين تي في .",
+  "latest_version": "r244",
+  "display_version": "٢٤٤",
+  "update_title": "القدس ٢٤٤ — ياسين تي في يعود",
+  "update_message": "اصلاح ياسين تي في ",
   "notice": {
     "enabled": true,
-    "id": "20261117-r243-yacine-alkuds-status.json",
-    "title": "القدس ٢٤٣ — إصلاح ياسين تي في",
+    "id": "20261117-r244-yacine-alkuds-status.json",
+    "title": "القدس ٢٤٤ — ياسين تي في يعود",
     "message": "اصلاح ياسين تي في."
   }
 }
