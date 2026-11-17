@@ -60,7 +60,7 @@ case "$E2_MAJOR" in
         (
 set -eu
 BASE=https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main
-NAME=Alkuds_ipaudio-r242-DreamOS-PY27.deb
+NAME=Alkuds_ipaudio-r243-DreamOS-PY27.deb
 [ "$#" -le 1 ] || { echo "Usage: sh installer-dreamos.sh [local.deb]";exit 1; }
 FILE=""
 TEMP_FILE=""
@@ -87,7 +87,7 @@ fi
 "$PY" - "$FILE" <<'PY'
 import sys,hashlib
 with open(sys.argv[1],'rb') as handle:data=handle.read()
-if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='409158066617c9ea33c6163fb0209b7ac9bb5cf646122f221c2c36c09f9c342f':
+if not data.startswith('!<arch>\n') or hashlib.sha256(data).hexdigest()!='a01faf2619576d8b9670aa2985b89eae083f7e3d577250ae6ed175b001698202':
     raise SystemExit('The DreamOS package is outdated or mismatched. Upload the matching release files together.')
 PY
 # Only use the receiver's configured feeds. Never install another Python runtime.
@@ -113,7 +113,7 @@ echo "Restart the GUI from the receiver menu. This is the DreamOS Python 2.7 bui
 esac
 # Always install the package linked here. No version comparison or GitHub API check.
 BASE="https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main"
-PACKAGE_NAME="Alkuds_ipaudio-r242.ipk"
+PACKAGE_NAME="Alkuds_ipaudio-r243.ipk"
 PACKAGE_URL="$BASE/$PACKAGE_NAME"
 LOCK="/tmp/alkuds-update.lock"
 if ! mkdir "$LOCK" 2>/dev/null; then
@@ -150,7 +150,7 @@ import sys, hashlib
 with open(sys.argv[1],'rb') as f:
     if f.read(8)!=b'!<arch>\n': raise ValueError('Downloaded file is not an IPK')
     f.seek(0)
-    if hashlib.sha256(f.read()).hexdigest() != 'bde159c9e2ded6e1ff7df88ff41ab71f7ed89bcc0ea07d719368feb1aaf32823':
+    if hashlib.sha256(f.read()).hexdigest() != '3a73755489e68b8daa6adf036ff5315e7810b9ee54c92550aa3e0cc68b5d05c9':
         raise ValueError('The downloaded package is outdated or mismatched. Upload the matching release files together.')
 PY
 [ "$?" -eq 0 ] || fail "Invalid downloaded package"
