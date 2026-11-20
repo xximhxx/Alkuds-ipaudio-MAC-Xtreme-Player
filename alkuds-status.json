@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "latest_version": "r244",
-  "display_version": "٢٤٤",
-  "update_title": "القدس ٢٤٤ — ياسين تي في يعود",
-  "update_message": "اصلاح ياسين تي في ",
+  "latest_version": "r245",
+  "display_version": "٢٤٥",
+  "update_title": "القدس ٢٤٥ — ثيم Royal وأصوات النقر",
+  "update_message": "ثيم جديد بنفسجي وذهبي، أصوات نقر ناعمة للتنقل (يمكن إيقافها من الإعدادات)، وإصلاحات للاستقرار.",
   "notice": {
     "enabled": true,
-    "id": "20261117-r244-yacine-alkuds-status.json",
-    "title": "القدس ٢٤٤ — ياسين تي في يعود",
-    "message": "اصلاح ياسين تي في."
+    "id": "20261121-r245-royal-theme",
+    "title": "القدس ٢٤٥ — ثيم Royal وأصوات النقر",
+    "message": "ثيم جديد بنفسجي وذهبي، أصوات نقر ناعمة للتنقل (يمكن إيقافها من الإعدادات)، وإصلاحات للاستقرار."
   }
 }
