@@ -113,7 +113,7 @@ echo "Restart the GUI from the receiver menu. This is the DreamOS Python 2.7 bui
 esac
 # Always install the package linked here. No version comparison or GitHub API check.
 BASE="https://raw.githubusercontent.com/xximhxx/Alkuds-ipaudio-MAC-Xtreme-Player/main"
-PACKAGE_NAME="Alkuds_ipaudio-r248.ipk"
+PACKAGE_NAME="Alkuds_ipaudio-r249.ipk"
 PACKAGE_URL="$BASE/$PACKAGE_NAME"
 LOCK="/tmp/alkuds-update.lock"
 if ! mkdir "$LOCK" 2>/dev/null; then
@@ -150,7 +150,7 @@ import sys, hashlib
 with open(sys.argv[1],'rb') as f:
     if f.read(8)!=b'!<arch>\n': raise ValueError('Downloaded file is not an IPK')
     f.seek(0)
-    if hashlib.sha256(f.read()).hexdigest() != '8254603bf2181c2f9c26546400e898e1862ce2fa0de5c0f2710b9f1d8c7a85c8':
+    if hashlib.sha256(f.read()).hexdigest() != '4a00543a86dd154939d14b4676e742c2291a4ec52275e52d2f62b08902031952':
         raise ValueError('The downloaded package is outdated or mismatched. Upload the matching release files together.')
 PY
 [ "$?" -eq 0 ] || fail "Invalid downloaded package"
